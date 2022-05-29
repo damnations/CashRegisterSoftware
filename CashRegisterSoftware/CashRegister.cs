@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Drawing;
 using System.Globalization;
@@ -15,7 +16,7 @@ namespace CashRegisterSoftware
 {
     public partial class CashRegister : Form
     {
-        static string myConnectionString = "server=localhost;user id = root;pwd=1234567;database=assignmentdb;sslmode=Disabled";
+        static string myConnectionString = ConfigurationManager.ConnectionStrings["assignmentdbConnectionString"].ConnectionString;
 
         public CashRegister()
         {
