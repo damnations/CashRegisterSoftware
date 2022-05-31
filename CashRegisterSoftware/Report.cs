@@ -124,13 +124,15 @@ namespace CashRegisterSoftware
         private void report_Load(object sender, EventArgs e)
         {
             fromDateTimePicker.MaxDate = DateTime.Now;
-            toDateTimePicker.MinDate = DateTime.Now;
+            toDateTimePicker.MinDate= fromDateTimePicker.MaxDate;
+            toDateTimePicker.MaxDate = fromDateTimePicker.MaxDate;
         }
 
         private void fromDateTimePicker_ValueChanged(object sender, EventArgs e)
         {
             fromDateTimePicker.MaxDate = DateTime.Now;
             toDateTimePicker.MinDate = fromDateTimePicker.Value;
+            toDateTimePicker.MaxDate = DateTime.Now;
         }
     }
 }
